@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rohith Bayya | Data Engineer, Data Analyst, AI/ML</title>
+  <meta name="description" content="Rohith Bayya: data engineering, analytics and applied AI. Streaming lakehouses, production ETL, KPI dashboards, RAG and agentic LLM systems.">
+  <meta property="og:title" content="Rohith Bayya | Data Engineer, Data Analyst, AI/ML">
+  <meta property="og:description" content="Streaming lakehouses, production ETL, KPI dashboards, RAG and agentic LLM systems.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='16' fill='white' text-anchor='middle'%3ERB%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <nav class="wrap nav" aria-label="Primary">
+      <a class="brand" href="#top">Rohith Bayya</a>
+      <ul class="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn-sm" href="assets/Rohith_Bayya_Resume.pdf" download>Resume</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" id="top">
+      <p class="eyebrow">Data Engineer · Data Analyst · AI/ML</p>
+      <h1>Rohith Bayya</h1>
+      <p class="lede" id="track-lede">
+        I build production data pipelines, governed KPI reporting and RAG and agentic LLM systems.
+        3+ years across data engineering, analytics and applied AI, with an M.S. in Data Analytics Engineering from George Mason University.
+      </p>
+      <div class="cta">
+        <a class="btn" href="assets/Rohith_Bayya_Resume.pdf" download>Download resume (PDF)</a>
+        <a class="btn btn-ghost" href="https://github.com/Rohith066" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/rohith-bayya06/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+
+      <div class="tracks" role="tablist" aria-label="Choose a focus">
+        <span class="tracks-label" id="tracks-label">View as:</span>
+        <button class="track" role="tab" aria-selected="true" data-track="all">Everything</button>
+        <button class="track" role="tab" aria-selected="false" data-track="de">Data Engineering</button>
+        <button class="track" role="tab" aria-selected="false" data-track="da">Data Analytics</button>
+        <button class="track" role="tab" aria-selected="false" data-track="ai">AI / ML</button>
+      </div>
+
+      <ul class="stats" id="stats" aria-live="polite"></ul>
+    </section>
+
+    <section class="wrap section" id="projects" aria-labelledby="projects-h">
+      <div class="section-head">
+        <h2 id="projects-h">Featured projects</h2>
+        <p class="muted" id="project-count"></p>
+      </div>
+
+      <div class="grid featured">
+        <article class="card card-lead" data-tracks="de ai">
+          <div class="card-top">
+            <h3>CrisisLens</h3>
+            <span class="kicker">Real-time disaster data platform · geo-aware agentic RAG</span>
+          </div>
+          <ul class="points">
+            <li>Streams live USGS earthquake and NOAA/NWS weather feeds into Kafka with an idempotent producer (acks=all), normalizing two sources into one canonical schema with restart-safe deduplication. Zero duplicate events verified across restarts.</li>
+            <li>Spark Structured Streaming medallion lakehouse (bronze, silver, gold) on Delta Lake with exactly-once checkpointing and latest-version dedup through Delta MERGE upserts.</li>
+            <li>Geo-aware agentic RAG: spatial pre-filtering, FAISS retrieval over local MiniLM embeddings, and grounded, cited answers from a local Llama 3.2, with guardrails and an evaluation approach for groundedness and hallucination rate.</li>
+            <li>Deployed end to end on AWS: EC2 provisioned with Terraform, Docker image shipped through GitHub Actions CI/CD to GHCR, serving a public hazard API and Leaflet map.</li>
+          </ul>
+          <ul class="tags"><li>Kafka</li><li>Spark Structured Streaming</li><li>Delta Lake</li><li>FAISS</li><li>Llama 3.2</li><li>AWS</li><li>Terraform</li><li>Docker</li><li>GitHub Actions</li></ul>
+          <a class="link" href="https://github.com/Rohith066/crisislens" target="_blank" rel="noopener">View on GitHub →</a>
+        </article>
+
+        <article class="card" data-tracks="de">
+          <div class="card-top">
+            <h3>Job Radar</h3>
+            <span class="kicker">Automated multi-source data pipeline</span>
+          </div>
+          <ul class="points">
+            <li>Production ETL pipeline ingesting from 15+ job board APIs and thousands of ATS boards, running hourly through GitHub Actions CI/CD.</li>
+            <li>Deterministic deduplication, incremental processing and multi-stage data quality filtering.</li>
+          </ul>
+          <ul class="tags"><li>Python</li><li>ETL</li><li>REST APIs</li><li>GitHub Actions</li><li>Data quality</li></ul>
+        </article>
+
+        <article class="card" data-tracks="de da">
+          <div class="card-top">
+            <h3>Cloud-Native Analytics Lakehouse</h3>
+            <span class="kicker">dbt · Snowflake · Airflow</span>
+          </div>
+          <ul class="points">
+            <li>End-to-end analytics stack from AWS S3 through PySpark to a Snowflake medallion architecture over 1M+ records.</li>
+            <li>Transformed with dbt (incremental models, schema tests, CI/CD), scheduled with Airflow DAGs, with dimensional fact and dimension modeling throughout.</li>
+            <li>60% cut in query latency.</li>
+          </ul>
+          <ul class="tags"><li>AWS S3</li><li>PySpark</li><li>Snowflake</li><li>dbt</li><li>Airflow</li><li>Dimensional modeling</li></ul>
+        </article>
+
+        <article class="card" data-tracks="ai da">
+          <div class="card-top">
+            <h3>ClimateGPT Fusion</h3>
+            <span class="kicker">Multi-agent LLM analytics</span>
+          </div>
+          <ul class="points">
+            <li>Agentic router dispatching questions to RAG, Text2SQL over DuckDB or direct LLM answering through function-calling schemas, with SQL validation before execution.</li>
+            <li>Evaluation harness comparing correctness, groundedness and hallucination risk across model versions.</li>
+            <li>3x faster research turnaround.</li>
+          </ul>
+          <ul class="tags"><li>LLMs</li><li>RAG</li><li>Text2SQL</li><li>DuckDB</li><li>Function calling</li><li>Evaluation</li></ul>
+        </article>
+
+        <article class="card" data-tracks="da de">
+          <div class="card-top">
+            <h3>CAIIEC AI Workforce Capstone</h3>
+            <span class="kicker">George Mason University / Schar School</span>
+          </div>
+          <ul class="points">
+            <li>Cleaned 60K raw records from REST APIs (Adzuna, Jooble, USAJobs) down to 11K validated records with Python and SQL, an 80% noise reduction.</li>
+            <li>Built a Streamlit self-serve dashboard for 10+ government researchers. Findings were published in a CAIIEC national AI workforce policy brief.</li>
+          </ul>
+          <ul class="tags"><li>Python</li><li>SQL</li><li>REST APIs</li><li>Streamlit</li><li>Data cleaning</li></ul>
+        </article>
+      </div>
+
+      <h3 class="subhead">More projects</h3>
+      <div class="grid compact">
+        <article class="card card-sm" data-tracks="de da">
+          <h4>EIA Grid Monitor</h4>
+          <p>Airflow-scheduled Python pipeline into PostgreSQL feeding hourly Tableau KPI dashboards, with threshold-based alerting and a deviation index.</p>
+          <ul class="tags"><li>Airflow</li><li>PostgreSQL</li><li>Tableau</li></ul>
+        </article>
+        <article class="card card-sm" data-tracks="da">
+          <h4>MarketPulse</h4>
+          <p>SQL and Python pipeline from REST APIs with time series analysis and channel-level performance decomposition, surfacing revenue pacing and competitive benchmarking in Tableau.</p>
+          <ul class="tags"><li>SQL</li><li>Python</li><li>Time series</li><li>Tableau</li></ul>
+        </article>
+        <article class="card card-sm" data-tracks="da">
+          <h4>NYC Crime Analytics</h4>
+          <p>Analyzed multi-year public datasets and delivered Tableau dashboards with five data-driven recommendations, focused on executive storytelling.</p>
+          <ul class="tags"><li>Tableau</li><li>Storytelling</li></ul>
+        </article>
+        <article class="card card-sm" data-tracks="ai da">
+          <h4>Carvana Risk Analytics</h4>
+          <p>End-to-end logistic regression pipeline in Python for risk classification, with feature importance analysis, model validation and performance metrics.</p>
+          <ul class="tags"><li>scikit-learn</li><li>Classification</li><li>Model validation</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap section" id="experience" aria-labelledby="exp-h">
+      <h2 id="exp-h">Experience</h2>
+
+      <article class="job">
+        <header class="job-head">
+          <div>
+            <h3>Data &amp; AI Engineer (Co-op)</h3>
+            <p class="org">SciEncephalon · Remote</p>
+          </div>
+          <p class="dates">Jan 2025 – Dec 2025</p>
+        </header>
+        <ul class="points">
+          <li data-tracks="de">Designed and deployed a Python ingestion and transformation pipeline processing 10,000+ documents per cycle with schema normalization and business-rule validation, cutting manual reporting time 60% and lifting throughput 40%.</li>
+          <li data-tracks="ai">Developed retrieval components for internal document intelligence tooling (recursive chunking, embeddings, metadata filtering, top-k retrieval), enabling natural-language search over enterprise documents.</li>
+          <li data-tracks="de">Implemented per-stage failure logging, anomaly monitoring checks and iterated validation rules, reaching zero undetected pipeline failures during the monitored period.</li>
+          <li data-tracks="da">Built a Streamlit self-serve analytics interface that let non-technical stakeholders resolve their own data requests, eliminating a recurring ad hoc request backlog.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <header class="job-head">
+          <div>
+            <h3>Data Analyst</h3>
+            <p class="org">XIT Solutions · Hyderabad, India</p>
+          </div>
+          <p class="dates">Jan 2022 – Dec 2023</p>
+        </header>
+        <ul class="points">
+          <li data-tracks="da de">Single source of truth for commercial KPIs across Finance, Risk and Compliance: a KPI governance framework with validation stored procedures, metadata documentation and field-level lineage behind 50+ downstream reports used by 15 senior leaders.</li>
+          <li data-tracks="da">Built and maintained 15+ Power BI executive dashboards for daily, monthly (MBR) and quarterly (QBR) review cadences.</li>
+          <li data-tracks="de da">Authored 12+ SQL optimizations (window functions, CTEs, indexed joins) over 10M+ record multi-source pipelines, cutting load time 45%; adopted as team coding standards.</li>
+          <li data-tracks="de da">Automated 15+ recurring reporting workflows in SQL and Python, from 4 hours to 30 minutes (an 87% reduction), with manual errors driven to near zero.</li>
+          <li data-tracks="da ai">Designed and ran a frequentist A/B experiment across 8 product categories with a 6-month holdout: a 25% stockout reduction that held at 18–20% after the test.</li>
+          <li data-tracks="da ai">Built ARIMA forecasts for quarterly revenue, margin and cost at 8–12% MAPE on a rolling 3-month holdout, supporting a $2M+ annual budget planning cycle.</li>
+          <li data-tracks="da ai">Applied K-means segmentation across 200+ client accounts; the resulting 3–5 cluster profiles were adopted for targeted outreach.</li>
+          <li data-tracks="da">Traced an intercompany transfer pricing discrepancy across 3 reporting systems, wrote the executive summary and authored a remediation runbook.</li>
+        </ul>
+      </article>
+
+      <h3 class="subhead">Education</h3>
+      <div class="edu">
+        <div><strong>George Mason University</strong><span>M.S. Data Analytics Engineering · Fairfax, VA</span></div>
+        <div><strong>Neil Gogte Institute of Technology</strong><span>B.Tech Computer Science · Hyderabad, India</span></div>
+      </div>
+    </section>
+
+    <section class="wrap section" id="skills" aria-labelledby="skills-h">
+      <h2 id="skills-h">Skills</h2>
+      <div class="skills">
+        <div class="skill-group" data-tracks="de da ai"><h3>Languages &amp; querying</h3><p>SQL, Python, window functions, CTEs, stored procedures, query optimization, performance tuning</p></div>
+        <div class="skill-group" data-tracks="de"><h3>Data engineering</h3><p>ETL/ELT, dbt, Apache Airflow, Apache Spark, PySpark, Spark Structured Streaming, Apache Kafka, Delta Lake, medallion architecture, dimensional modeling, REST APIs, FastAPI</p></div>
+        <div class="skill-group" data-tracks="de"><h3>Warehouses &amp; cloud</h3><p>Snowflake, PostgreSQL, DuckDB, SQLite, AWS (S3, EC2), Docker, Terraform, CI/CD, GitHub Actions, Git</p></div>
+        <div class="skill-group" data-tracks="ai"><h3>AI &amp; machine learning</h3><p>scikit-learn, logistic regression, classification, model validation, feature engineering, LLMs, RAG, FAISS, LangChain, embeddings, semantic search, Text2SQL, function calling, multi-agent orchestration, evaluation harnesses, hallucination guardrails, Ollama, Llama 3.2</p></div>
+        <div class="skill-group" data-tracks="da ai"><h3>Analytics &amp; statistics</h3><p>A/B testing, experimentation, statistical validation, ARIMA forecasting, time series, K-means, segmentation, anomaly detection</p></div>
+        <div class="skill-group" data-tracks="da"><h3>BI &amp; visualization</h3><p>Power BI, Tableau, Streamlit, Advanced Excel, dashboarding, self-serve analytics, reporting automation</p></div>
+        <div class="skill-group" data-tracks="de da"><h3>Data quality &amp; governance</h3><p>Data quality, schema validation, data governance, KPI governance, data lineage, documentation, observability, alerting</p></div>
+      </div>
+    </section>
+
+    <section class="wrap section contact" id="contact" aria-labelledby="contact-h">
+      <h2 id="contact-h">Get in touch</h2>
+      <p class="muted">Based in New York, NY. Open to Data Engineering, Data Analytics and AI/ML roles.</p>
+      <div class="cta">
+        <a class="btn" href="mailto:rohithbr6@gmail.com">rohithbr6@gmail.com</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/rohith-bayya06/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://github.com/Rohith066" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-ghost" href="assets/Rohith_Bayya_Resume.pdf" download>Resume (PDF)</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <p>© <span id="year">2026</span> Rohith Bayya</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
